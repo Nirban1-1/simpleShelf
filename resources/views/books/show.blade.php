@@ -19,6 +19,13 @@
       </ul>
 
       <ul class="navbar-right">
+        <li>
+            <form action="#" method="GET" style="display: inline;">
+            <input type="text" name="search" placeholder="Search"
+            style="padding: 5px 12px; border-radius: 16px; border: 1px solid #ccc; font-size: 12px; width: 120px;">
+
+            </form>
+        </li>
         <li><a href="{{ url('/login') }}">Login</a></li>
         <li><a href="{{ url('/register') }}">Sign Up</a></li>
       </ul>
