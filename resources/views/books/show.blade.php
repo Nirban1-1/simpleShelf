@@ -6,14 +6,25 @@
     <title>{{ $book->title }} - Simple Shelf</title>
     <link rel="stylesheet" href="{{ asset('css/show.css') }}">
 </head>
-<body style="background: url('{{ asset('images/bg-images/books-bg.jpg') }}') no-repeat center center fixed; background-size: cover;">
+<body>
 
 
     <!-- Navigation Bar -->
     <nav class="navbar">
       <ul class="navbar-left">
         <li><a href="{{ route('home') }}">Home</a></li>
-        <li><a href="#">Category</a></li>
+        <li class="dropdown">
+            <a href="#">Categories ▾</a>
+            <ul class="dropdown-content">
+                <li><a href="#">Comic</a></li>
+                <li><a href="#">Romantic</a></li>
+                <li><a href="#">Self Development</a></li>
+                <li><a href="#">Science Fiction</a></li>
+                <li><a href="#">Poetry</a></li>
+                <li><a href="#">Adventure</a></li>
+                <li><a href="#">Literature</a></li>
+            </ul>
+        </li>
         <li><a href="{{ route('profiledetails.show') }}">My Profile</a></li>
         <li><a href="{{ route('orders.index') }}">My Orders</a></li>
       </ul>

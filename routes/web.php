@@ -42,7 +42,6 @@ Route::post('/cart/coupon', [CartController::class, 'applyCoupon'])->name('cart.
 });
 
 use App\Http\Controllers\CheckoutController;
-
 // Cart / Checkout routes
 Route::get('/checkout', [CheckoutController::class, 'index'])->name('checkout');
 Route::post('/checkout', [CheckoutController::class, 'store'])->name('checkout.store');
