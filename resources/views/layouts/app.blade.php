@@ -8,6 +8,59 @@
         @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&display=swap');
     </style>
 </head>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const input = document.getElementById('book-search');
+    const results = document.getElementById('search-results');
+
+    let timer;
+
+    input.addEventListener('keyup', function() {
+        const query = this.value;
+
+        clearTimeout(timer);
+
+        if (query.length < 2) {
+            results.style.display = 'none';
+            return;
+        }
+
+        timer = setTimeout(() => {
+            fetch(`/books/autocomplete?query=${encodeURIComponent(query)}`)
+                .then(response => response.json())
+                .then(data => {
+                    results.innerHTML = '';
+                    if (data.length === 0) {
+                        results.style.display = 'none';
+                        return;
+                    }
+
+                    data.forEach(book => {
+                        const li = document.createElement('li');
+                        li.textContent = book.title;
+                        li.style.padding = '8px';
+                        li.style.cursor = 'pointer';
+                        li.addEventListener('click', () => {
+                            window.location.href = `/books/${book.id}`;
+                        });
+                        results.appendChild(li);
+                    });
+
+                    results.style.display = 'block';
+                });
+        }, 300); // wait 300ms after typing
+    });
+
+    // Hide dropdown if clicked outside
+    document.addEventListener('click', function(e) {
+        if (!input.contains(e.target) && !results.contains(e.target)) {
+            results.style.display = 'none';
+        }
+    });
+});
+</script>
+
 <body>
 
     <!-- Navigation Bar -->
@@ -32,10 +85,31 @@
 
       <ul class="navbar-right">
         <li>
-            <form action="#" method="GET" style="display: inline;">
-            <input type="text" name="search" placeholder="Search"
-            style="padding: 5px 12px; border-radius: 16px; border: 1px solid #ccc; font-size: 12px; width: 120px;">
-            </form>
+            
+        
+        
+        <form action="{{ route('books.search') }}" method="GET" style="position:relative;">
+    <input type="text" name="query" id="book-search" placeholder="Search books..." autocomplete="off">
+    <button type="submit" style="display:none;">Search</button>
+
+    <ul id="search-results" style="
+        position:absolute;
+        top:100%;
+        left:0;
+        right:0;
+        background:white;
+        border:1px solid #ccc;
+        list-style:none;
+        margin:0;
+        padding:0;
+        z-index:1000;
+        display:none;
+        max-height:200px;
+        overflow-y:auto;
+    "></ul>
+</form>
+
+
         </li>
         @guest
             <li><a href="{{ route('login') }}">Login</a></li>

@@ -9,6 +9,8 @@ use App\Http\Controllers\OrderController;
 
 // Homepage
 Route::get('/', [BookController::class, 'index'])->name('home');
+Route::get('/books/search', [BookController::class, 'search'])->name('books.search');
+Route::get('/books/autocomplete', [BookController::class, 'autocomplete'])->name('books.autocomplete');
 
 // Book details
 Route::get('/books/{id}', [BookController::class, 'show'])->name('books.show');
@@ -45,6 +47,8 @@ use App\Http\Controllers\CheckoutController;
 // Cart / Checkout routes
 Route::get('/checkout', [CheckoutController::class, 'index'])->name('checkout');
 Route::post('/checkout', [CheckoutController::class, 'store'])->name('checkout.store');
+
+
 
 
 Route::post('/books/return/{book}', [BookController::class, 'returnBook'])->name('books.return');

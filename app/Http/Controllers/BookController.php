@@ -7,6 +7,7 @@ use App\Models\Book;
 use App\Models\IssuedBook;
 use Illuminate\Support\Facades\Auth;
 use App\Models\hasActiveMembership;
+use App\Models\User;
 
 class BookController extends Controller
 {
@@ -31,6 +32,49 @@ class BookController extends Controller
 
         return view('books.show', compact('book', 'books'));
     }
+
+
+    public function search(Request $request)
+{
+    $query = $request->input('query');
+
+    // Search for books by title or author
+    $books = Book::where('title', 'LIKE', "%{$query}%")
+                 ->orWhere('author', 'LIKE', "%{$query}%")
+                 ->get();
+
+    // If no books found
+    if ($books->isEmpty()) {
+        return redirect()->back()->with('error', 'No books found for your search.');
+    }
+
+    // If at least one book found, redirect to the first book's details page
+    return redirect()->route('books.show', $books->first()->id);
+}
+
+
+
+
+    
+public function autocomplete(Request $request)
+{
+    $query = $request->input('query');
+
+    if (!$query) {
+        return response()->json([]);
+    }
+
+    // Search only titles for suggestions
+    $books = Book::where('title', 'LIKE', "%{$query}%")
+                 ->limit(5) // show up to 5 suggestions
+                 ->get(['id', 'title']);
+
+    return response()->json($books);
+}
+
+
+
+
 
     /**
      * Issue a book for the logged-in user.
@@ -77,5 +121,11 @@ class BookController extends Controller
 
         return redirect()->route('orders.index')->with('success', 'Book returned successfully.');
     }
+
+
+
+
+
+
 }
 
