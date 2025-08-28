@@ -1,0 +1,424 @@
+/* --- Header Styling --- */
+.membership-header {
+    margin-bottom: 50px;
+}
+
+.membership-title {
+    font-family: 'Arial';
+    font-size: 2.5rem;
+    color: #2c3e50;
+    font-weight: 600;
+    margin-bottom: 5px;
+    text-align: center; /* Center aligned */
+}
+
+.membership-subtitle {
+    font-size: 1rem;
+    color: #7f8c8d;
+    margin-top: 5px;
+    text-align: center;
+}
+
+/* --- Membership Cards --- */
+.membership-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 25px;
+    justify-content: center;
+}
+
+.plan-card {
+    background-color: #f7f7f7;
+    border-radius: 10px;
+    border: 1px solid #ddd;
+    padding: 25px 20px;
+    width: 280px;
+    transition: transform 0.2s, box-shadow 0.2s;
+    text-align: center;
+}
+
+.plan-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+}
+
+.plan-name {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #2c3e50;
+    margin-bottom: 5px;
+}
+
+.underline {
+    width: 50px;
+    height: 3px;
+    background-color: #3498db;
+    margin: 0 auto 10px;
+    border-radius: 2px;
+}
+
+.plan-description {
+    font-size: 0.95rem;
+    color: #555;
+    margin-bottom: 12px;
+}
+
+.plan-price {
+    font-size: 1.2rem;
+    color: #27ae60;
+    margin-bottom: 8px;
+}
+
+.plan-duration {
+    font-size: 0.95rem;
+    color: #7f8c8d;
+    margin-bottom: 15px;
+}
+
+/* --- Buttons --- */
+.plan-card .btn {
+    width: 100%;
+    font-weight: 500;
+    background-color: #3498db;
+    border: none;
+    color: #fff;
+    padding: 10px 0;
+    border-radius: 6px;
+}
+
+.plan-card .btn:hover {
+    background-color: #2980b9;
+}
+
+/* Optional: Different plan colors */
+.plan-card.basic { border-top: 3px solid #2ecc71; }
+.plan-card.standard { border-top: 3px solid #3498db; }
+.plan-card.premium { border-top: 3px solid #9b59b6; }
+
+
+
+/* --- Cart Section --- */
+.cart-section {
+    background-color: #fefefe;
+    border-radius: 10px;
+    padding: 25px 20px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+}
+
+.cart-title {
+    font-family: 'Georgia', serif;
+    font-size: 1.8rem;
+    color: #2c3e50;
+    margin-bottom: 15px;
+}
+
+.cart-container {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.cart-item {
+    background-color: #f7f7f7;
+    padding: 12px 15px;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: transform 0.15s, box-shadow 0.15s;
+}
+
+.cart-item:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 10px rgba(0,0,0,0.08);
+}
+
+.cart-book-title {
+    font-size: 1rem;
+    color: #34495e;
+    font-weight: 500;
+}
+
+/* Buttons */
+.cart-item .btn {
+    font-size: 0.85rem;
+    padding: 6px 10px;
+    border-radius: 6px;
+    font-weight: 500;
+}
+
+.cart-actions .btn {
+    font-size: 1rem;
+    font-weight: 500;
+    background-color: #3498db;
+    border: none;
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 6px;
+    transition: background-color 0.2s;
+}
+
+.cart-actions .btn:hover {
+    background-color: #2980b9;
+}
+
+
+.section-title {
+    font-family: 'Georgia', serif;
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: #2c3e50;
+    border-bottom: 2px solid #3498db;
+    display: inline-block;
+    padding-bottom: 5px;
+    margin-bottom: 20px;
+}
+
+.issued-book-card {
+    border-radius: 12px;
+    transition: transform 0.2s ease-in-out, box-shadow 0.2s;
+    padding: 10px;      /* optional: inner spacing inside the card */
+    margin: 10px; 
+    box-shadow: #2c3e50;  
+}
+
+.issued-book-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+}
+
+.issued-book-card .card-title {
+    font-weight: 600;
+    color: #34495e;
+}
+
+.issued-book-card .btn {
+    border-radius: 20px;
+    padding: 6px 16px;
+}
+.issued-books-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: flex-start; /* or center if you prefer */
+    align-items: flex-start;
+    padding-left: 15px;
+    box-shadow: #2c3e50;
+}
+/* --- Checkout Summary --- */
+.checkout-summary {
+    background: #b2c9d6;
+    border-radius: 12px;
+    border: 1px solid #e0e0e0;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+    padding: 20px 25px;
+    max-width: 500px;
+    margin: 20px 20px 20px auto; /* push it to the right */
+    transition: transform 0.15s ease-in-out;
+}
+
+
+.checkout-summary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 16px rgba(0,0,0,0.08);
+}
+
+.checkout-summary h5 {
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: #2c3e50;
+    margin-bottom: 15px;
+}
+
+.checkout-summary .d-flex {
+    font-size: 0.95rem;
+    color: #555;
+    margin-bottom: 8px;
+}
+
+.checkout-summary hr {
+    margin: 12px 0;
+    border-top: 1px solid #ddd;
+}
+
+.checkout-summary .fw-bold {
+    font-weight: 600;
+    font-size: 1rem;
+    color: #2c3e50;
+}
+
+.checkout-summary form input {
+    border-radius: 6px;
+}
+
+.checkout-summary form .btn {
+    font-size: 0.9rem;
+    padding: 6px 14px;
+    border-radius: 6px;
+    font-weight: 500;
+}
+
+/* --- Orders History --- */
+.order-history {
+    margin-top: 40px;
+}
+
+.order-card {
+    background: #ffffff;
+    border-radius: 10px;
+    border: 1px solid #e0e0e0;
+    padding: 18px 20px;
+    margin-bottom: 15px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    transition: transform 0.15s ease-in-out;
+}
+
+.order-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 14px rgba(0,0,0,0.08);
+}
+
+.order-card .fw-semibold {
+    font-size: 1rem;
+    font-weight: 600;
+    color: #2c3e50;
+}
+
+.order-card .text-muted {
+    font-size: 0.85rem;
+}
+
+.order-card .badge {
+    font-size: 0.8rem;
+    padding: 6px 10px;
+    border-radius: 12px;
+}
+
+.order-card .badge.text-bg-info {
+    background-color: #3498db !important;
+    color: #fff;
+}
+
+.order-card .small.text-muted {
+    font-size: 0.85rem;
+    margin-top: 4px;
+}
+/* 💰 Stylish Pay Button */
+.btn-success {
+    position: relative;
+    border-radius: 40px;
+    font-size: 18px;
+    padding: 2px 30px;
+    font-weight: 600;
+    color: #15cda8;
+    background: #fff;
+    border: 2px solid #13bc8f;
+    overflow: hidden;
+    transition: all 0.35s ease-in-out;
+    cursor: pointer;
+    letter-spacing: 0.5px;
+    z-index: 1;
+}
+
+/* 💎 Hover effect */
+.btn-success:hover {
+    color: #fff;
+    background: linear-gradient(135deg, #13bc8f, #15cda8);
+    box-shadow: 0 10px 20px rgba(19, 188, 143, 0.35);
+    transform: translateY(-3px) scale(1.03);
+}
+
+/* ✨ Shine effect */
+.btn-success::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -75%;
+    width: 50%;
+    height: 100%;
+    background: linear-gradient(
+        120deg,
+        rgba(255,255,255,0.2) 0%,
+        rgba(255,255,255,0.6) 60%,
+        rgba(255,255,255,0) 100%
+    );
+    transform: skewX(-25deg);
+    transition: all 0.7s ease;
+    z-index: -1;
+}
+
+/* Run shine on hover */
+.btn-success:hover::after {
+    left: 125%;
+}
+.bg-image{
+        background: url('/images/bg-images/cartbg.jpg') no-repeat center center fixed;
+        background-size: cover;
+}
+.bg-image::before {
+        content: "";
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(255, 255, 255, 0.9);
+        z-index: -1;
+    }
+
+/* --- My Orders Section --- */
+.order-books-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: flex-start; /* align left, change to center if needed */
+    margin-top: 15px;
+}
+
+.order-book-card {
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    width: 180px; /* controls how many cards fit per row */
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.order-book-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 6px 16px rgba(0,0,0,0.12);
+}
+
+.order-book-img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    border-bottom: 1px solid #ddd;
+}
+
+.order-book-info {
+    padding: 12px;
+}
+
+.order-book-info h6 {
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: #2c3e50;
+    margin-bottom: 4px;
+}
+
+.order-book-info p {
+    margin: 2px 0;
+    font-size: 0.85rem;
+    color: #555;
+}
+
+.order-book-info .fw-semibold {
+    color: #27ae60;
+}
+

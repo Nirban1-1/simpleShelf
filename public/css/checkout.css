@@ -1,0 +1,155 @@
+/* ============================= */
+/* Checkout Page General Styles  */
+/* ============================= */
+body {
+    background: url('{{ asset("images/checkout-bg.jpg") }}') no-repeat center center fixed;
+    background-size: cover;
+    font-family: 'Poppins', sans-serif;
+    color: #333;
+}
+
+/* Optional overlay for better readability */
+body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(250, 249, 249, 0.90); /* white overlay with transparency */
+    z-index: -1;
+}
+
+/* Center the checkout content */
+.checkout-wrapper {
+    display: flex;
+    justify-content: center;
+    margin: 50px 0;
+    z-index: 1; /* above overlay */
+}
+
+/* ============================= */
+/* Card Styling */
+/* ============================= */
+.card {
+    background: rgba(255, 255, 255, 0.95); /* slightly transparent for bg image effect */
+    border-radius: 15px;
+    padding: 25px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+    transition: all 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 16px 30px rgba(0,0,0,0.12);
+}
+
+/* ============================= */
+/* Form Inputs */
+/* ============================= */
+.form-control, .form-select, textarea {
+    border-radius: 10px;
+    border: 1px solid #d1d3e0;
+    padding: 12px 15px;
+    transition: all 0.3s ease;
+}
+
+.form-control:focus, .form-select:focus, textarea:focus {
+    border-color: #13bc8f;
+    box-shadow: 0 0 8px rgba(19, 188, 143, 0.3);
+    outline: none;
+}
+
+/* ============================= */
+/* Labels */
+.form-label {
+    font-weight: 600;
+    color: #555;
+}
+
+/* ============================= */
+/* Payment Options */
+.form-check-input {
+    accent-color: #13bc8f;
+    width: 18px;
+    height: 18px;
+    cursor: pointer;
+}
+
+#online-options, #card-options {
+    background: #f8f9fa;
+    border-radius: 10px;
+    padding: 15px;
+    border: 1px solid #d1d3e0;
+    margin-top: 10px;
+}
+
+#card-options img {
+    transition: transform 0.2s ease;
+}
+
+#card-options img:hover {
+    transform: scale(1.2);
+}
+
+/* ============================= */
+/* Checkout Summary */
+.checkout-summary h4 {
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+
+.checkout-summary ul li {
+    padding: 8px 0;
+    font-size: 16px;
+}
+
+.checkout-summary hr {
+    border-top: 2px solid #eee;
+}
+
+.checkout-summary h5 {
+    color: #13bc8f;
+    font-size: 20px;
+    margin-top: 15px;
+}
+
+/* ============================= */
+/* Pay Button */
+.btn-success {
+    border-radius: 25px;
+    font-size: 18px;
+    font-weight: 600;
+    padding: 12px 0;
+    color: #fff;
+    background: linear-gradient(135deg, #13bc8f, #0da77c);
+    border: none;
+    transition: all 0.3s ease-in-out;
+    box-shadow: 0 6px 15px rgba(19,188,143,0.4);
+}
+
+.btn-success:hover {
+    transform: translateY(-3px) scale(1.02);
+    box-shadow: 0 12px 24px rgba(19,188,143,0.5);
+}
+
+/* ============================= */
+/* Responsive Adjustments */
+@media (max-width: 992px) {
+    .checkout-wrapper {
+        margin: 30px 20px;
+    }
+}
+
+@media (max-width: 768px) {
+    .checkout-wrapper {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .checkout-wrapper .col-md-7,
+    .checkout-wrapper .col-md-5 {
+        max-width: 100%;
+        margin-bottom: 20px;
+    }
+}
